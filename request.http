@@ -1,0 +1,8 @@
+POST http://localhost:3000/api/books
+
+Content-Type: application/json
+
+{
+    "username" : "admin",
+    "password" : "123124"
+}

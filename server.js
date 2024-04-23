@@ -1,3 +1,4 @@
+require("dotenv").config();
 const app = require('./app');
 const config = require("./app/config")
 const MongoDB = require("./app/utils/mongodb.util")
@@ -8,7 +9,12 @@ const MongoDB = require("./app/utils/mongodb.util")
 
 async function startServer() {
     try{
-        await MongoDB.connect(config.db.uri);
+        await MongoDB.connect(config.db.uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useFindAndModify: false,
+        });
         console.log("Connected to MongoDB");
         
         const PORT = config.app.port;
