@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const publishers = require("./publishers");
 const Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
@@ -25,9 +24,13 @@ const BookSchema = new Schema({
     imageUrl:{
         type: String,
     },
-    publishers:{
+    publisher:{
         type: Schema.Types.ObjectId,
         ref: 'publishers'
+    },
+    status:{
+        type: Boolean,
+        default: true
     }
 });
 

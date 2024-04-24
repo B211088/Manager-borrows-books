@@ -5,12 +5,11 @@ const router = express.Router();
 
 router.route('/')
         .get(books.findAll)
-        .post(books.create)
-        .delete(books.deleteAll);
+        .post(books.createBook);
 
 router.route('/:id')
         .get(books.findOne)
-        .put(books.update)
-        .delete(books.delete);
+        .put(books.updateBook)
+        .delete(books.deleteBook);
 
 module.exports = router;

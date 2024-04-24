@@ -25,4 +25,4 @@ const unitPriceSchema  = new Schema({
 
 });
 
-module.exports = mongoose.model('unitPrice', unitPriceSchema);
+module.exports = mongoose.model('readers', unitPriceSchema);

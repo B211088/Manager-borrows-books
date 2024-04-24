@@ -1,14 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const unitPrice = require("./unitPrice")
-const books = require("./books");
 
-const bookBorrowingSchema = new Schema ({
-    unitPrice:{
+const trackingBorrowSchema = new Schema ({
+    reader:{
         type: Schema.Types.ObjectId,
-        ref: 'unitPrice',
+        ref: 'readers',
     },
-    books:{
+    book:{
         type: Schema.Types.ObjectId,
         ref: 'books',
     },
@@ -20,4 +18,6 @@ const bookBorrowingSchema = new Schema ({
     returnDate:{
         type: Date,
     }
-})
+});
+
+module.exports = mongoose.model('trackingborrows', trackingBorrowSchema);
